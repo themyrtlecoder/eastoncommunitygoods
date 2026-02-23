@@ -74,11 +74,11 @@ const getData = async() => {
             filters = categories?.map(each => each.category);
             const currentDate = new Date();
             const timeString = () => {
-                const localeString = currentDate.toLocaleTimeString().split(':');
+                const localeString = currentDate.toLocaleTimeString("en-US").split(':');
                 return localeString[0] + ':' + localeString[1] + localeString[2].split(' ')[1]
             }
 
-            date = currentDate.toLocaleDateString() + ", " + timeString();
+            date = currentDate.toLocaleDateString("en-US") + ", " + timeString();
         }
         
     )
