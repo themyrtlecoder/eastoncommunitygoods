@@ -1,0 +1,247 @@
+@import './variables.scss';
+
+.navigation {
+
+    .color_wrapper {
+        background-color: $moss;
+        padding-top: 3em;
+        color: $cream;
+        fill: $cream;
+    }
+
+    .header_wrapper, .overview_wrapper, .review_wrapper {
+        display: flex;
+        height: max-content;
+        width: 100vw;
+    }
+
+    .header_wrapper {
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5em;
+        border-top: solid 1.5px;
+        border-bottom: double 5px;
+        color: inherit;
+        .header {
+            text-transform: uppercase;
+            font-style: italic;
+            width: calc(100vw - 2em);
+            font-weight: 600;
+            stroke: none;
+        }
+
+    }
+
+    .overview_wrapper {
+        padding: 0.5em 1em;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: double 5px;
+        h4 {
+            text-transform: uppercase;
+        }
+        .italized {
+            span {
+                font-style: italic;
+            }  
+        }
+    }
+
+    .review_wrapper {
+        padding: 1em;
+        align-items: flex-start;
+        justify-content: space-between;
+        .filter_wrapper, .search_wrapper {
+            height: max-content;
+            width: max-content;
+        }
+        .search_wrapper {
+            display: flex;
+            border-radius: 1.5em;
+            align-items: center;
+            cursor: pointer;
+            padding: 0.33em;
+            width: max-content;
+            transition: all ease-in-out 0.75s;
+            &.active {
+                background-color: rgba($lime, 0.5);
+            }
+        }
+        .search_input_wrapper {
+            padding: 0;
+            margin: 0;
+            height: max-content;
+            transition: all ease-in-out 0.5s;
+            overflow: hidden;
+            width: var(--searchWidth);
+            .search_input {
+                field-sizing: content;
+                border: none;
+                height: 1.25em;
+                padding: 0.75em 1.25em 0.75em 0.25em;
+                display: block;
+                background: none;
+                outline: none;
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+        .search_icon_wrapper {
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+            height: max-content;
+            width: max-content;
+            .search_icon {
+                stroke-linejoin: round;
+                width: 1.25em;
+                height: auto;
+                display: block;
+                circle, path {
+                    fill: none;
+                    stroke-width: 5px;
+                }
+            }
+        }
+        
+        .filter_wrapper {
+            align-items: flex-start;
+            border: solid 1.5px;
+        }
+
+        .selected_filters_wrapper {
+            display: flex;
+            align-items: center;  
+            gap: 0.5em; 
+            padding: .33em;
+            .active_filter {
+                display: flex;
+                align-items: center;
+                background: rgba($tan, .25);
+                padding: 0.25em 0.5em;
+                border-radius: 100vw;
+                .remove_filter_icon {
+                    height: auto;
+                    width: .5em;
+                    cursor: pointer;
+                    stroke-linecap: round;
+                    margin-left: 0.5em;
+                    path {
+                        fill: none;
+                        stroke-width: 5px;
+                    }
+                }
+            }
+                     
+            .dropdown_icon {
+                stroke-linecap: round;
+                height: auto;
+                width: 1em;
+                margin-left: 1em;
+                cursor: pointer;
+                transition: all ease-in-out 0.5s;
+                path {
+                    fill: none;
+                    stroke-width: 5px;
+                }
+                &.open {
+                    scale: 1 -1 1;
+                }
+            }
+        }
+        .categories_list_wrapper {
+            transition: all ease-in-out 0.5s;
+            overflow: hidden;
+            height: var(--filterHeight);
+            width: max-content;
+            .categories_list {
+                list-style: none;
+                padding: .5em .33em;
+                height: max-content;
+                li {
+                    transition: all ease-in-out 0.5s;
+                    border-radius: 100vmax;
+                    width: max-content;
+                    padding: 0.25em 0.75em;
+                    &:not(:first-of-type), &:not(:last-of-type) {
+                        margin: 0.5em 0;
+                    }
+                    cursor: pointer;
+                    &.inactive {
+                        background-color: rgba($lime, .25);
+                        &:hover {
+                            background-color: rgba($lime, 0.5);
+                        }
+                    }
+                    &.active {
+                        background-color: rgba($lime, 1);
+                        &:hover {
+                            background-color: rgba($lime, 0.25);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    position: fixed;
+    width: 100vw;
+    height: max-content;
+    bottom: 1em;
+    padding: 0 1em;
+    display: flex;
+    justify-content: flex-end;
+    transition: all ease-in-out 0.5s;
+    .learn_icon {
+        transition: scale 0.5s ease-in-out;
+        height: 1em;
+        width: auto;
+        cursor: pointer;
+        circle {
+            fill: none;
+            stroke-width: 5px;
+            transition: stroke 0.45s ease-in-out 0.15s;
+        }
+        text {
+            fill: $slate;
+            transition: fill 0.45s ease-in-out 0.15s;
+        }
+        &.flip {
+            scale: 1 -1 1;
+            circle {
+                stroke: $cream;
+            }
+            text {
+                fill: $cream;
+            }
+        }
+    }
+
+    .about {
+        transition: inherit;
+        position: absolute;
+        width: 100vw;
+        left: 0;
+        bottom: -1em;
+        padding: 1em;
+        translate: 0 calc(100% + 1em) 0;
+        background-color: $tan;
+        &.active {
+            translate: 0 0 0;
+        }
+        p {
+            color: $cream;
+            width: calc(100vw - 5.5em);
+            span {
+                font-style: italic;
+                font-weight: 600;
+                color: $lime;
+            }
+        }
+    }
+    
+}
+
