@@ -1,4 +1,4 @@
-@import './variables.scss';
+@use 'variables';
 
 .emergency_needs_list {
     padding: 0 1em;
@@ -55,12 +55,12 @@
                 width: max-content;
                 height: max-content;
                 padding: 0.25em 1em;
-                background-color: rgba($lime, .25);
+                background-color: rgba(variables.$lime, .25);
                 border-radius: 100vw;
                 margin: .5em;
                 line-height: 2;
                 &:hover {
-                    background-color: rgba($lime, .75);
+                    background-color: rgba(variables.$lime, .75);
                 }
             }
         }

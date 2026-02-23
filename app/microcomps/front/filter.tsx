@@ -7,14 +7,14 @@ import styles from '../../styles/components.module.scss';
 
 const Filter = () => {
     const {filter, categories, setListing} = useProvider();
-    const filterOptions = useRef(null);
+    const filterOptions = useRef<HTMLUListElement>(null);
     const {toggle, setToggle} = useToggle();
 
     const toggleCategories = () => {
         setToggle(!toggle);
         if (filterOptions.current) {
             const { height } = filterOptions.current.getBoundingClientRect();
-            document.body.style.setProperty('--filterHeight', !toggle ? height + 'px' : '0px');
+            document.body.style.setProperty('--filterHeight', !toggle ? height + 'px' : '0px'); 
         }
     }
 

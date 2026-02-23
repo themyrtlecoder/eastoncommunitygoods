@@ -1,12 +1,12 @@
-@import './variables.scss';
+@use 'variables';
 
 .navigation {
 
     .color_wrapper {
-        background-color: $moss;
+        background-color: variables.$moss;
         padding-top: 3em;
-        color: $cream;
-        fill: $cream;
+        color: variables.$cream;
+        fill: variables.$cream;
     }
 
     .header_wrapper, .overview_wrapper, .review_wrapper {
@@ -64,7 +64,7 @@
             width: max-content;
             transition: all ease-in-out 0.75s;
             &.active {
-                background-color: rgba($lime, 0.5);
+                background-color: rgba(variables.$lime, 0.5);
             }
         }
         .search_input_wrapper {
@@ -118,7 +118,7 @@
             .active_filter {
                 display: flex;
                 align-items: center;
-                background: rgba($tan, .25);
+                background: rgba(variables.$tan, .25);
                 padding: 0.25em 0.5em;
                 border-radius: 100vw;
                 .remove_filter_icon {
@@ -169,15 +169,15 @@
                     }
                     cursor: pointer;
                     &.inactive {
-                        background-color: rgba($lime, .25);
+                        background-color: rgba(variables.$lime, .25);
                         &:hover {
-                            background-color: rgba($lime, 0.5);
+                            background-color: rgba(variables.$lime, 0.5);
                         }
                     }
                     &.active {
-                        background-color: rgba($lime, 1);
+                        background-color: rgba(variables.$lime, 1);
                         &:hover {
-                            background-color: rgba($lime, 0.25);
+                            background-color: rgba(variables.$lime, 0.25);
                         }
                     }
                 }
@@ -206,16 +206,16 @@
             transition: stroke 0.45s ease-in-out 0.15s;
         }
         text {
-            fill: $slate;
+            fill: variables.$slate;
             transition: fill 0.45s ease-in-out 0.15s;
         }
         &.flip {
             scale: 1 -1 1;
             circle {
-                stroke: $cream;
+                stroke: variables.$cream;
             }
             text {
-                fill: $cream;
+                fill: variables.$cream;
             }
         }
     }
@@ -228,17 +228,17 @@
         bottom: -1em;
         padding: 1em;
         translate: 0 calc(100% + 1em) 0;
-        background-color: $tan;
+        background-color: variables.$tan;
         &.active {
             translate: 0 0 0;
         }
         p {
-            color: $cream;
+            color: variables.$cream;
             width: calc(100vw - 5.5em);
             span {
                 font-style: italic;
                 font-weight: 600;
-                color: $lime;
+                color: variables.$lime;
             }
         }
     }

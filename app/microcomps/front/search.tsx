@@ -8,7 +8,7 @@ import useToggle from './toggler';
 const Search = () => {
     const {search, setListing} = useProvider();
     const {toggle, setToggle} = useToggle();
-    const searcherRef = useRef(null);
+    const searcherRef = useRef<HTMLInputElement>(null);
 
     const toggleSearch = () => {
         setToggle(!toggle);

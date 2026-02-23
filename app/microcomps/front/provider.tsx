@@ -1,6 +1,6 @@
 'use client';
 
-import { Dispatch, createContext, ReactNode, useContext, useEffect, useReducer } from "react";
+import { Dispatch, createContext, ReactNode, useContext, useReducer } from "react";
 
 type InitialState = {
     search: string;
@@ -20,6 +20,17 @@ const initial = {
     categories: [],
     update: ''
 }
+
+const reducer = (state:any, action:any) => {
+        const payload = action.payload;
+        switch (action.type) {
+            case 'update': 
+            const {name, value} = payload;
+            return {...state, [name]: value};
+            default: 
+            return {...state, ...action}
+        }
+    };
 
 const Provider = createContext<InitialState>({
     ...initial,
