@@ -13,7 +13,7 @@ const Index = () => {
 
   const {setListing, headers, list, search, filter} = useProvider();
 
-  const preferredHeaders = ['ITEM NAME', 'CURRENT NEED', 'DROP-OFF LOCATIONS'];
+  const preferredHeaders = ['NAME', 'NEED AMOUNT', 'DROP-OFF AREAS'];
 
   useEffect(() => {
     startTransition(async() => {

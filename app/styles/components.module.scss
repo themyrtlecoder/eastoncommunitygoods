@@ -206,6 +206,7 @@
             transition: stroke 0.45s ease-in-out 0.15s;
         }
         text {
+            stroke: none;
             fill: variables.$slate;
             transition: fill 0.45s ease-in-out 0.15s;
         }
@@ -215,6 +216,7 @@
                 stroke: variables.$cream;
             }
             text {
+                stroke: none;
                 fill: variables.$cream;
             }
         }
