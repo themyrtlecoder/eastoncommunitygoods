@@ -18,7 +18,12 @@ const Index = () => {
   useEffect(() => {
     startTransition(async() => {
       const {headers, listing, filters, last_updated} = await getData();
-      setListing({headers: headers.filter((header) => preferredHeaders.includes(header)), list: listing, categories: filters, update: last_updated});
+
+      const localeString = last_updated.toLocaleTimeString("en-US").split(':');
+      const timeString = localeString[0] + ':' + localeString[1] + localeString[2].split(' ')[1];
+      const dateString = `${last_updated.toLocaleDateString("en-US")}, ${timeString}`
+
+      setListing({headers: headers.filter((header) => preferredHeaders.includes(header)), list: listing, categories: filters, update: dateString});
     })
   }, []);
 

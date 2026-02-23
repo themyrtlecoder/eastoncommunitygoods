@@ -21,7 +21,7 @@ const getData = async() => {
 
     let filters: any[] | null | undefined = [];
 
-    let date: string | null = null; 
+    let date: Date | null = new Date();
 
     await client.auth().accessToken(env('TOKEN'));
 
@@ -72,13 +72,7 @@ const getData = async() => {
             headers = values !== null && values !== undefined ? values[0].filter(e => e.length > 0).map(each => each.split(' (')[0]) : [];
             listing = final;
             filters = categories?.map(each => each.category);
-            const currentDate = new Date();
-            const timeString = () => {
-                const localeString = currentDate.toLocaleTimeString("en-US").split(':');
-                return localeString[0] + ':' + localeString[1] + localeString[2].split(' ')[1]
-            }
-
-            date = currentDate.toLocaleDateString("en-US") + ", " + timeString();
+            date = new Date();
         }
         
     )
