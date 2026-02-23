@@ -15,11 +15,11 @@ const env = (name: string): string => {
 const getData = async() => {
     let creds; 
 
-    let headers: [] | null | undefined = [];
+    let headers: any[] | null | undefined = [];
 
-    let listing: [] | null | undefined = [];
+    let listing: { item: any; category: any; need_count: any; locations: any; }[] | null | undefined = [];
 
-    let filters: [] | null | undefined = [];
+    let filters: any[] | null | undefined = [];
 
     let date: string | null = null; 
 
@@ -69,7 +69,7 @@ const getData = async() => {
                 }
             }).flat();
 
-            headers = values[0].filter(e => e.length > 0).map(each => each.split(' (')[0]);
+            headers = values !== null && values !== undefined ? values[0].filter(e => e.length > 0).map(each => each.split(' (')[0]) : [];
             listing = final;
             filters = categories?.map(each => each.category);
             const currentDate = new Date();
