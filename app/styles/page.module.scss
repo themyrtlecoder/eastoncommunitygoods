@@ -20,6 +20,9 @@
         border-bottom: solid 1.5px;  
         padding-bottom: 1em;
         align-items: end;
+        h2 {
+            font-size: calc(.4rem + 1.2vw);
+        }
         li:last-of-type {
             justify-self: end;
             text-align: right;
@@ -71,6 +74,12 @@
         opacity: .75;
     }
 
+}
+
+@media (min-width: 768px) {
+  .headers h2 {
+    font-size: calc(0.5rem + 0.75vw) !important;
+  }
 }
 
 
