@@ -38,7 +38,7 @@
         border-bottom: solid 1.5px; 
         padding: 1em 0;
         li {
-            align-self: center;
+            align-self: flex-start;
             text-transform: uppercase;
         }
         ul:last-of-type {
@@ -54,6 +54,7 @@
             a {
                 transition: all ease-in-out .5s;
                 text-align: right;
+                justify-self: end;
                 display: block;
                 width: max-content;
                 height: max-content;
